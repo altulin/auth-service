@@ -39,35 +39,6 @@ cp server/.env.example server/.env
 
 База создаётся автоматически при первом запуске в `server/data/app.db`.
 
-## Структура
-
-```
-auth-service/
-├── package.json            обёртка: npm run dev / setup из корня
-├── public/                 фронтенд (раздаётся Express'ом)
-│   ├── login.html          вход
-│   ├── register.html       регистрация
-│   ├── profile.html        защищённая страница
-│   ├── 404.html
-│   ├── css/style.css       тёмная тема, адаптив
-│   └── js/
-│       ├── common.js       fetch-обёртка, валидация, капча, вывод ошибок
-│       ├── register.js
-│       ├── login.js
-│       └── profile.js
-├── server/
-│   ├── src/
-│   │   ├── index.js        Express-приложение, сессии, маршруты страниц
-│   │   ├── db.js           SQLite: схема, подготовленные запросы
-│   │   ├── session-store.js хранилище сессий в SQLite
-│   │   ├── password.js     pbkdf2: хеширование и проверка
-│   │   ├── captcha.js      генерация и проверка капчи
-│   │   ├── validators.js   серверная валидация
-│   │   └── routes/auth.js  /api/register, /api/login, /api/me, /api/logout, /api/captcha
-│   ├── .env.example
-│   └── package.json
-└── deploy/                 systemd, nginx, инструкция по VPS
-```
 
 ## Страницы
 
