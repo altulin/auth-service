@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Личный кабинет</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="card">
+    <div id="profile" hidden>
+      <h1 class="card__title" id="greeting">Личный кабинет</h1>
+      <p class="card__subtitle">Данные вашей учётной записи</p>
+
+      <div class="profile__list">
+        <div class="profile__row">
+          <span class="profile__key">Email</span>
+          <span class="profile__value" id="email">—</span>
+        </div>
+        <div class="profile__row">
+          <span class="profile__key">Дата регистрации</span>
+          <span class="profile__value" id="created-at">—</span>
+        </div>
+        <div class="profile__row">
+          <span class="profile__key">Роль</span>
+          <span class="profile__value" id="role">—</span>
+        </div>
+      </div>
+
+      <button class="button button--secondary" id="logout" type="button">Выйти</button>
+    </div>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/profile.js"></script>
+</body>
+</html>

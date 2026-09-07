@@ -1,0 +1,11 @@
+{
+  "name": "auth-service-root",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Обёртка: команды можно запускать из корня проекта",
+  "scripts": {
+    "dev": "npm --prefix server run dev",
+    "start": "npm --prefix server start",
+    "setup": "npm --prefix server install"
+  }
+}

@@ -1,0 +1,26 @@
+[Unit]
+Description=Auth Service (Node.js + Express + SQLite)
+After=network.target
+
+[Service]
+Type=simple
+User=al
+Group=al
+WorkingDirectory=/home/al/auth-service/server
+EnvironmentFile=/home/al/auth-service/server/.env
+ExecStart=/home/al/.nvm/versions/node/v24.17.0/bin/node src/index.js
+Restart=always
+RestartSec=5
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=auth-service
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=false
+ReadWritePaths=/home/al/auth-service/server/data
+
+[Install]
+WantedBy=multi-user.target

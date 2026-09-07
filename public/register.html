@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Регистрация</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1 class="card__title">Регистрация</h1>
+    <p class="card__subtitle">Создайте аккаунт, чтобы продолжить</p>
+
+    <div id="alert" class="alert" role="alert"></div>
+
+    <form id="register-form" novalidate>
+      <div class="field">
+        <label class="field__label" for="username">Имя пользователя</label>
+        <input class="field__input" id="username" name="username" type="text"
+               autocomplete="username" maxlength="20" placeholder="user123">
+        <p class="field__hint">Латиница и цифры, 3–20 символов</p>
+        <p class="field__error" id="error-username"></p>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="email">Email</label>
+        <input class="field__input" id="email" name="email" type="email"
+               autocomplete="email" maxlength="100" placeholder="you@example.com">
+        <p class="field__error" id="error-email"></p>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="password">Пароль</label>
+        <input class="field__input" id="password" name="password" type="password"
+               autocomplete="new-password" placeholder="••••••••">
+        <p class="field__hint">Минимум 6 символов, буквы и цифры</p>
+        <p class="field__error" id="error-password"></p>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="confirmPassword">Подтверждение пароля</label>
+        <input class="field__input" id="confirmPassword" name="confirmPassword" type="password"
+               autocomplete="new-password" placeholder="••••••••">
+        <p class="field__error" id="error-confirmPassword"></p>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="captcha">Проверка</label>
+        <div class="captcha__question">
+          <span id="captcha-question">Загрузка капчи…</span>
+          <button type="button" class="captcha__refresh" id="captcha-refresh"
+                  title="Обновить капчу" aria-label="Обновить капчу">↻</button>
+        </div>
+        <input class="field__input" id="captcha" name="captcha" type="text"
+               inputmode="numeric" autocomplete="off" maxlength="4" placeholder="Ответ">
+        <p class="field__error" id="error-captcha"></p>
+      </div>
+
+      <button class="button" type="submit" id="submit">Зарегистрироваться</button>
+    </form>
+
+    <p class="card__footer">
+      Уже есть аккаунт? <a class="link" href="/login">Войти</a>
+    </p>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/register.js"></script>
+</body>
+</html>
